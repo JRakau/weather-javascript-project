@@ -42,7 +42,7 @@
   }());
 
   /* Catmull-rom spline stuffs. */
-  /*
+  
   function upsample(n, spline) {
     var polyline = [],
         len = spline.length,
@@ -133,7 +133,7 @@
 
     return small;
   }
-  */
+ 
 
   /* Define skycon things. */
   /* FIXME: I'm *really really* sorry that this code is so gross. Really, I am.

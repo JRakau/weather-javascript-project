@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Weather Project</title>
 </head>
+
 <body>
+    <div>
+        <a href="n.html">N Weather</a>
+        <a href="index.html">Home</a>
+    </div>
     <div class="location">
         <h1 class="location-timezone">Timezone</h1>
-        <p>Icon</p>
+        <canvas class="icon1" width="128" height="128"></canvas>
     </div>
     <div class="temperature">
         <div class="degree-section">
@@ -20,8 +25,15 @@
             <span>F</span>
         </div>
         <div class="temperature-description">Its cold</div>
-    
+
     </div>
+   
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/skycons.js">
+        var skycons = new Skycons({ "color": "pink" });
+        skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+        skycons.play();
+    </script>
 </body>
+
 </html>

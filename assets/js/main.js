@@ -24,13 +24,16 @@ window.addEventListener('load', () => {
                 })
                 .then(data => {
                     console.log(data);
-                    const { temp } = data.currentConditions;
+                    //const { temp } = data.currentConditions;
                     // set DOM Elements from the API
                     temperatureDegree.textContent = data.currentConditions.temp;
-                    console.log(temperatureDescription.textContent);
+                  
                     temperatureDescription.textContent = data.description;
+
                     locationTimezone.textContent = data.timezone;
-                    console.log(data.description);
+                 
+                    //Set Icon
+                    setIcons(data.currentConditions.icon, document.querySelector(".icon1"));
                 });
         });
 
@@ -41,8 +44,12 @@ window.addEventListener('load', () => {
     }
 
     function setIcons(icon, iconID) {
-        const skycons = new skycons({ color: "white" });
+        const skycons = new Skycons({ color: "white" });
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        console.log(currentIcon);
+       
+        skycons.play();
+        return skycons.set(iconID, skycons[currentIcon]);
     }
 
 });

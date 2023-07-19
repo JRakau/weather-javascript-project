@@ -10,14 +10,13 @@
   </head>
 
   <body>
-    <div>
-      <a href="n.html">N Weather</a>
-      <a href="index.html">Home</a>
-    </div>
+    <!-- Location Section -->
     <div class="location">
       <h1 class="location-timezone">Timezone</h1>
       <canvas class="icon1" width="128" height="128"></canvas>
+      <canvas class="icon2" width="128" height="128"></canvas>
     </div>
+    <!-- Use Geolocation - Temperature Section -->
     <div class="temperature-section">
       <div class="degree-section">
         <h2 class="temperature-degree">34</h2>
@@ -25,8 +24,27 @@
       </div>
       <div class="temperature-description">Its cold</div>
     </div>
+    <!-- Search by city - Temperature Section -->
+    <div class="wrapper">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="container">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Enter a city name"
+            id="city"
+            value="Dublin"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+        <div id="result"></div>
+      </div>
+    </div>
 
+    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/skycons.js"></script>
+    <script src="key.js"></script>
   </body>
 </html>

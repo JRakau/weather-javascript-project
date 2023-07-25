@@ -1,13 +1,33 @@
+/**
+ * KEY to access the weather API
+ */
+const keyapi = "8S2JKDDY6S8WGVTVPBJTKHJ67";
+
+/**
+ * Link to the weather API
+ */
+let apilink;
+
+let temperatureDescription = document.querySelector(".temperature-description");
+let temperatureDegree = document.querySelector(".temperature-degree");
+let locationTimezone = document.querySelector(".location-timezone");
+let temperatureSection = document.querySelector(".temperature-section");
+let temperatureSpan = document.querySelector(".temperature-section span");
+let temperatureMin = document.querySelector(".temp-min");
+let temperatureMax = document.querySelector(".temp-max");
+let temperatureMinSpan = document.querySelector(".temp-min-section span");
+let temperatureMaxSpan = document.querySelector(".temp-max-section span");
+
+let temperatureVar = 0;
+let temperatureMinVar = 0;
+let temperatureMaxVar = 0;
+
+/**
+ * Get data from the weather API using geoLocation
+ */
 let getGeoLocation = () => {
   let long;
   let lat;
-  let temperatureDescription = document.querySelector(
-    ".temperature-description"
-  );
-  let temperatureDegree = document.querySelector(".temperature-degree");
-  let locationTimezone = document.querySelector(".location-timezone");
-  let temperatureSection = document.querySelector(".temperature-section");
-  const temperatureSpan = document.querySelector(".temperature-section span");
 
   const keyapi = "8S2JKDDY6S8WGVTVPBJTKHJ67";
   let apilink;
@@ -26,30 +46,29 @@ let getGeoLocation = () => {
           console.log(data);
           //const { temp } = data.currentConditions;
           // set DOM Elements from the API
-          temperatureDegree.textContent = data.currentConditions.temp;
+          temperature = data.currentConditions.temp;
+          temperatureDegree.textContent = convertC(temperature);
+
+          temperatureSpan.textContent = "˚C";
+          temperatureMinSpan.textContent = "˚C";
+          temperatureMaxSpan.textContent = "˚C";
 
           temperatureDescription.textContent = data.description;
 
           locationTimezone.textContent = data.timezone;
+
+          temperatureMinVar = data.days[0].tempmin;
+          temperatureMaxVar = data.days[0].tempmax;
+
+          temperatureMin.textContent = convertC(temperatureMinVar);
+
+          temperatureMax.textContent = convertC(temperatureMaxVar);
 
           //set the icon
           setIcons(
             data.currentConditions.icon,
             document.querySelector(".icon1")
           );
-
-          //Change temperature to Celcius/Fahrenheit
-          temperatureSection.addEventListener("click", () => {
-            if (temperatureSpan.textContent === "F") {
-              temperatureSpan.textContent = "C";
-              temperatureDegree.textContent = Math.floor(
-                (data.currentConditions.temp - 32) * (5 / 9)
-              );
-            } else {
-              temperatureSpan.textContent = "F";
-              temperatureDegree.textContent = data.currentConditions.temp;
-            }
-          });
         });
     });
   } else {
@@ -58,6 +77,27 @@ let getGeoLocation = () => {
 };
 
 window.addEventListener("load", getGeoLocation);
+
+//Change temperature to Celcius/Fahrenheit
+temperatureSection.addEventListener("click", () => {
+  if (temperatureSpan.textContent === "˚F") {
+    temperatureSpan.textContent = "˚C";
+    temperatureMinSpan.textContent = "˚C";
+    temperatureMaxSpan.textContent = "˚C";
+    temperatureDegree.textContent = convertC(temperature);
+    temperatureMin.textContent = convertC(temperatureMinVar);
+
+    temperatureMax.textContent = convertC(temperatureMaxVar);
+  } else {
+    temperatureSpan.textContent = "˚F";
+    temperatureMinSpan.textContent = "˚F";
+    temperatureMaxSpan.textContent = "˚F";
+    temperatureDegree.textContent = temperature;
+    temperatureMin.textContent = temperatureMinVar;
+
+    temperatureMax.textContent = temperatureMaxVar;
+  }
+});
 
 /**
  * setIcons sets the icon to the skycons library
@@ -129,5 +169,25 @@ let getWeather = () => {
   }
 };
 
-searchBtn.addEventListener("click", getWeather);
+window.addEventListener("click", getWeather);
 window.addEventListener("load", getWeather);
+
+/**
+ * convertF Convert celcius to fahrenheit
+ *
+ * @param {*} Celcius the value to convert
+ * @return {*} returns the Fahrenheit value
+ */
+function convertF(celsius) {
+  return Math.floor((celsius * 9) / 5 + 32);
+}
+
+/**
+ * convertC Convert fahrenheit to celcius
+ *
+ * @param {*} fahrenheit the value to convert
+ * @return {*} returns the celcius value
+ */
+function convertC(fahrenheit) {
+  return Math.floor(((fahrenheit - 32) * 5) / 9);
+}

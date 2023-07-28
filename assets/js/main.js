@@ -18,6 +18,7 @@ let apilink;
  *
  *                      DOM elements declaration  section
  ********************************************************************/
+//By class name
 let temperatureDescription = document.querySelector(".temperature-description");
 let temperatureDegree = document.querySelector(".temperature-degree");
 let locationCityName = document.querySelector(".location-city-name");
@@ -27,6 +28,8 @@ let temperatureMin = document.querySelector(".temp-min");
 let temperatureMax = document.querySelector(".temp-max");
 let temperatureMinSpan = document.querySelector(".temp-min-section span");
 let temperatureMaxSpan = document.querySelector(".temp-max-section span");
+
+// By Id
 let citySearch = document.getElementById("city-search");
 let searchBtn = document.getElementById("search-button");
 
@@ -45,6 +48,7 @@ let cityValue = citySearch.value;
  * Function to fetch weather details using geoLocation
  *********************************************************/
 let getWeatherByGeoLocation = () => {
+  console.log("getWeatherByGeoLocation() section: " + cityValue);
   let long;
   let lat;
 
@@ -85,16 +89,11 @@ let getWeatherByGeoLocation = () => {
             data.currentConditions.icon,
             document.querySelector(".icon1")
           );
-        })
-        //If geoLocation goes wrong
-        .catch(() => {
-          cityValue = "Try again using your city name";
-          console.log("Try again using your city name");
         });
     });
   } else {
-    cityValue = "Try again using your city name";
     console.log("Try again using your city name");
+    alert("Try again using your city name");
   }
 };
 
@@ -104,17 +103,17 @@ let getWeatherByGeoLocation = () => {
  ************************************************************************/
 
 let getWeather = () => {
+  cityValue = citySearch.value;
+  console.log("getWeather() section: " + cityValue);
   //If input field is empty
   if (cityValue.length == 0) {
-    cityValue = "Please enter a city name";
     console.log("Please enter a city name");
+    alert("Please enter a city name");
   }
   //If input field is NOT empty
   else {
     apilink = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityValue}?key=${keyapi}`;
 
-    //Clear the input field
-    cityValue.value = "";
     fetch(apilink)
       .then((Response) => {
         return Response.json();
@@ -146,9 +145,31 @@ let getWeather = () => {
       })
       //If city name is NOT valid
       .catch(() => {
-        cityValue = "City not found";
         console.log("City not found");
+        alert("City not found");
       });
+  }
+  //Clear the input field
+  cityValue.value = "";
+};
+
+let convertTemperatureDisplay = () => {
+  if (temperatureSpan.textContent === "˚F") {
+    temperatureSpan.textContent = "˚C";
+    temperatureMinSpan.textContent = "˚C";
+    temperatureMaxSpan.textContent = "˚C";
+    temperatureDegree.textContent = convertC(temperature);
+    temperatureMin.textContent = convertC(temperatureMinVar);
+
+    temperatureMax.textContent = convertC(temperatureMaxVar);
+  } else {
+    temperatureSpan.textContent = "˚F";
+    temperatureMinSpan.textContent = "˚F";
+    temperatureMaxSpan.textContent = "˚F";
+    temperatureDegree.textContent = temperature;
+    temperatureMin.textContent = temperatureMinVar;
+
+    temperatureMax.textContent = temperatureMaxVar;
   }
 };
 
@@ -212,22 +233,4 @@ searchBtn.addEventListener("click", getWeather);
  * Event action when click on the temperature section
  */
 //
-temperatureSection.addEventListener("click", () => {
-  if (temperatureSpan.textContent === "˚F") {
-    temperatureSpan.textContent = "˚C";
-    temperatureMinSpan.textContent = "˚C";
-    temperatureMaxSpan.textContent = "˚C";
-    temperatureDegree.textContent = convertC(temperature);
-    temperatureMin.textContent = convertC(temperatureMinVar);
-
-    temperatureMax.textContent = convertC(temperatureMaxVar);
-  } else {
-    temperatureSpan.textContent = "˚F";
-    temperatureMinSpan.textContent = "˚F";
-    temperatureMaxSpan.textContent = "˚F";
-    temperatureDegree.textContent = temperature;
-    temperatureMin.textContent = temperatureMinVar;
-
-    temperatureMax.textContent = temperatureMaxVar;
-  }
-});
+temperatureSection.addEventListener("click", convertTemperatureDisplay);

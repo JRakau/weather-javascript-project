@@ -12,62 +12,50 @@
   <body>
     <!-- Location Section -->
     <div class="location">
-      <h1 class="location-timezone">Timezone</h1>
+      <h1 class="location-city-name"></h1>
       <canvas class="icon1" width="128" height="128"></canvas>
-      <canvas class="icon2" width="128" height="128"></canvas>
     </div>
-    <!-- Use Geolocation - Temperature Section -->
+    <!-- Temperature Section -->
     <div class="temperature-section">
       <div class="degree-section">
         <h2 class="temperature-degree"></h2>
         <span></span>
       </div>
+
+      <!-- Min. Temperature Section -->
       <div>
         <div class="temp-min-section">
           <h3 class="title-temp-min-max">min .</h3>
           <h3 class="temp-min"></h3>
           <span></span>
         </div>
+        <!-- Max. Temperature Section -->
         <div class="temp-max-section">
           <h3 class="title-temp-min-max">max .</h3>
           <h3 class="temp-max"></h3>
           <span></span>
         </div>
       </div>
-     
+
+      <!-- Temperature description Section -->
       <div class="temperature-description"></div>
+
+      <!-- Search by city - Temperature Section -->
       <div class="cityNameRequest">
         <div class="search-section">
           <input
             type="text"
             placeholder="Enter a city name"
-            id="city"
+            id="city-search"
             value="Dublin"
           />
           <button id="search-button">Search</button>
         </div>
-    </div>
-    <!-- Search by city - Temperature Section 
-    <div class="wrapper">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="container">
-        <div class="search-container">
-          <input
-            type="text"
-            placeholder="Enter a city name"
-            id="city"
-            value="Dublin"
-          />
-          <button id="search-btn">Search</button>
-        </div>
-        <div id="result"></div>
       </div>
-    </div>-->
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/skycons.js"></script>
-    <script src="key.js"></script>
+      <!-- Scripts -->
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/skycons.js"></script>
+    </div>
   </body>
 </html>

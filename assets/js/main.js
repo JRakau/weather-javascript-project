@@ -33,6 +33,7 @@ let temperatureMaxSpan = document.querySelector(".temp-max-section span");
 let citySearch = document.getElementById("city-search");
 let searchBtn = document.getElementById("search-button");
 
+// Set initial value for variables
 let temperatureVar = 0;
 let temperatureMinVar = 0;
 let temperatureMaxVar = 0;

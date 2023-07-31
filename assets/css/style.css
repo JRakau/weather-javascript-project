@@ -7,10 +7,11 @@
 body {
   height: 100vh;
   display: flex;
+  margin: 20px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+  background: linear-gradient(rgb(170, 216, 222), rgb(58, 71, 143));
   font-family: sans-serif;
   color: white;
 }

@@ -55,7 +55,11 @@ Developer tools from Chrome was used throughout development and for final testin
 
 ![Home screen on loading](https://jrakau.github.io/weather-javascript-project/docs/testing/page-loading.png)
 
-![Home screen asking permition to use geoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
+![Alert asking permition to use geoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
+
+![Alert asking to enter with name of the city](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-enter-city-name.png)
+
+![Alert informing name of the city invalid or wrong](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-enter-city-name.png)
 
 ### Functional Testing
 
@@ -76,7 +80,7 @@ The home page was tested to ensure it functioned as expected when correct data w
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
+1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Load page
 
 Expected:
@@ -93,9 +97,10 @@ On the index page was tested to ensure it functionality as expected when geoloca
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
-2. Allow the page to use your geolocation information
-3. Load information with geolocation data
+1. Open browser and navigate to [Weather Project loading](https://jrakau.github.io/weather-javascript-project/docs/testing/page-loading.png)
+2. Allow the page to use your geolocation information [GeoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
+3. JavaScript collect the information using as parameter the GeoLocation and send to the API and receive a JSON with the forcast and load the data on the screen
+3. Data loaded on the screen [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 
 Expected:
 
@@ -111,7 +116,7 @@ On the index page was tested to ensure it functionality as expected when input t
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
+1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Input the city name and press the search button
 3. Load the information with city name 
 
@@ -129,9 +134,9 @@ On the index page was tested to ensure it functionality as expected when input t
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
+1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Press the search button without input city name
-3. Show a alert message "please enter a city name"
+3. Show a alert message "please enter a city name" [Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-enter-city-name.png)
 
 Expected:
 
@@ -149,7 +154,7 @@ Steps to test:
 
 1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
 2. Press the search button with city name not valid
-3. Show a alert message "City not found"
+3. Show a alert message "City not found" [Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-city-not-found.png)
 
 Expected:
 
@@ -164,12 +169,12 @@ Shows a alert message "City not found"
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org)
 
-![Index HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu_html_checker_index.png)
+![Index HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu-html-checker-index.png)
 
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org)
 
-![CSS Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/jigsaw_validator.png)
+![CSS Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/style-css-validated-css.png)
 
 ### Unfixed Bugs
 

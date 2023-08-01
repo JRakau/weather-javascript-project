@@ -33,7 +33,7 @@ All pages were tested to ensure responsiveness on screen sizes from 320px and up
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
+1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html) or use the link <https://jrakau.github.io/weather-javascript-project/index.html>
 2. Click on Weather
 3. Load page
 
@@ -97,10 +97,10 @@ On the index page was tested to ensure it functionality as expected when geoloca
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project loading](https://jrakau.github.io/weather-javascript-project/docs/testing/page-loading.png)
-2. Allow the page to use your geolocation information [GeoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
+1. Open browser and navigate to ![Weather Project loading](https://jrakau.github.io/weather-javascript-project/docs/testing/page-loading.png)
+2. Allow the page to use your geolocation information ![GeoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
 3. JavaScript collect the information using as parameter the GeoLocation and send to the API and receive a JSON with the forcast and load the data on the screen
-3. Data loaded on the screen [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
+3. Data loaded on the screen ![Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 
 Expected:
 
@@ -116,7 +116,7 @@ On the index page was tested to ensure it functionality as expected when input t
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
+1. Open browser and navigate to ![Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Input the city name and press the search button
 3. Load the information with city name 
 
@@ -134,9 +134,9 @@ On the index page was tested to ensure it functionality as expected when input t
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
+1. Open browser and navigate to ![Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Press the search button without input city name
-3. Show a alert message "please enter a city name" [Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-enter-city-name.png)
+3. Show a alert message "please enter a city name" ![Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-enter-city-name.png)
 
 Expected:
 
@@ -152,9 +152,9 @@ On the index page was tested to ensure it functionality as expected when input t
 
 Steps to test:
 
-1. Open browser and navigate to [Weather Project](https://jrakau.github.io/weather-javascript-project/index.html)
+1. Open browser and navigate to ![Weather Project](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
 2. Press the search button with city name not valid
-3. Show a alert message "City not found" [Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-city-not-found.png)
+3. Show a alert message "City not found" ![Alert message](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-city-not-found.png)
 
 Expected:
 

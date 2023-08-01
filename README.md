@@ -162,12 +162,6 @@ Shows a alert message "City not found"
 
 ![Index HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu_html_checker_index.png)
 
-![Types_Weather HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu_html_checker_types.png)
-
-![Contact_form HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu_html_checker_contact.png)
-
-![Thank_you HTML Validator Results](https://jrakau.github.io/weather-javascript-project/docs/testing/nu_html_checker_thank_you.png)
-
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org)
 

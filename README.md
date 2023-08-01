@@ -1,6 +1,6 @@
 # Project Weather
 
-Project Weather is a website to consult current, max and min temperatures.
+Project Weather is a website to consult current, max and min temperatures using JSON to collect data from Visual Crossing Weather API.
 
 ## Features
 
@@ -51,7 +51,11 @@ Developer tools from Chrome was used throughout development and for final testin
 
 ### Pages Testing
 
-![Home screen](https://jrakau.github.io/weather-javascript-project/docs/testing/index_screen.png)
+![Home screen](https://jrakau.github.io/weather-javascript-project/docs/testing/index-html-screen.png)
+
+![Home screen on loading](https://jrakau.github.io/weather-javascript-project/docs/testing/page-loading.png)
+
+![Home screen asking permition to use geoLocation](https://jrakau.github.io/weather-javascript-project/docs/testing/alert-use-geolocation.png)
 
 ### Functional Testing
 
